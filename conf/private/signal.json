@@ -1,0 +1,211 @@
+{
+  "DEVICE": [
+    {
+      "NAME": "basic",
+      "HOST": "192.168.1.10",
+      "PORT": 1101,
+      "SIGNAL": {
+        "RECV": {
+          "HEARTBEAT": {
+            "ADDRESS": 11000,
+            "MAX": 100,
+            "MIN": 0
+          },
+          "STORE_INFO": {
+            "ADDRESS": 11010
+          }
+        },
+        "SEND": {
+          "HEARTBEAT": {
+            "ADDRESS": 11060,
+            "MAX": 100,
+            "MIN": 0
+          },
+          "REPORT_AGV_ERROR": {
+            "1": {
+              "ADDRESS": 11067
+            },
+            "2": {
+              "ADDRESS": 11068
+            }
+          },
+          "REPORT_AGV_BATTERY": {
+            "1": {
+              "ADDRESS": 11075
+            },
+            "2": {
+              "ADDRESS": 11076
+            }
+          },
+          "REPORT_AGV_MODE": {
+            "1": {
+              "BIT": {
+                "AUTO": 0,
+                "RUNNING": 1
+              }
+            },
+            "2": {
+              "BIT": {
+                "AUTO": 2,
+                "RUNNING": 3
+              }
+            },
+            "ADDRESS": 11061
+          },
+          "REPORT_CAR_ACTION": {
+            "1": {
+              "ADDRESS": 11069
+            },
+            "2": {
+              "ADDRESS": 11070
+            }
+          },
+          "REPORT_REVERSE_CAR_NUMBER": {
+            "ADDRESS": 11080,
+            "LENGTH": 4
+          }
+        }
+      },
+      "SUB_DEVICE": [
+        {
+          "NAME": "lift-a",
+          "SIGNAL": {
+            "RECV": {
+              "STATUS": {
+                "ADDRESS": 11001,
+                "BIT": {
+                  "MANUAL": 0,
+                  "AUTO": 1,
+                  "SEMI_AUTOMATIC": 2,
+                  "STOP": 3,
+                  "RESET": 4,
+                  "CONTINUE": 5,
+                  "CANCEL": 6
+                }
+              },
+              "COMMAND": {
+                "ADDRESS": 11003,
+                "BIT": {
+                  "SAVE": 0,
+                  "TAKE": 1,
+                  "DOCKED": 2,
+                  "WAIT_SAVE": 8,
+                  "WAIT_TAKE": 9
+                }
+              },
+              "SAVE_NUMBER": {
+                "ADDRESS": 11004
+              },
+              "TAKE_NUMBER": {
+                "ADDRESS": 11005
+              },
+              "LEVEL": {
+                "ADDRESS": 11008
+              }
+            },
+            "SEND": {
+              "CAR_FINISH_NUMBER": {
+                "ADDRESS": 11065
+              },
+              "LOAD_ACTION": {
+                "ADDRESS": 11071,
+                "VALUES": {
+                  "START": 1,
+                  "FINISH": 2,
+                  "CLEAR": 0
+                }
+              },
+              "UNLOAD_ACTION": {
+                "ADDRESS": 11073,
+                "VALUES": {
+                  "START": 1,
+                  "FINISH": 2,
+                  "CLEAR": 0
+                }
+              },
+              "ORDER_HANDLE": {
+                "ADDRESS": 11077,
+                "BIT": {
+                  "SAVE_CAR_HANDLE": 0,
+                  "TAKE_CAR_HANDLE": 1
+                }
+              },
+              "REPORT_FIND_CAR_NUMBER": {
+                "ADDRESS": 11078
+              }
+            }
+          }
+        },
+        {
+          "NAME": "lift-b",
+          "SIGNAL": {
+            "RECV": {
+              "STATUS": {
+                "ADDRESS": 11002,
+                "BIT": {
+                  "MANUAL": 0,
+                  "AUTO": 1,
+                  "SEMI_AUTOMATIC": 2,
+                  "STOP": 3,
+                  "RESET": 4,
+                  "CONTINUE": 5,
+                  "CANCEL": 6
+                }
+              },
+              "COMMAND": {
+                "ADDRESS": 11003,
+                "BIT": {
+                  "SAVE": 3,
+                  "TAKE": 4,
+                  "DOCKED": 5,
+                  "WAIT_SAVE": 11,
+                  "WAIT_TAKE": 12
+                }
+              },
+              "SAVE_NUMBER": {
+                "ADDRESS": 11006
+              },
+              "TAKE_NUMBER": {
+                "ADDRESS": 11007
+              },
+              "LEVEL": {
+                "ADDRESS": 11009
+              }
+            },
+            "SEND": {
+              "CAR_FINISH_NUMBER": {
+                "ADDRESS": 11066
+              },
+              "LOAD_ACTION": {
+                "ADDRESS": 11072,
+                "VALUES": {
+                  "START": 1,
+                  "FINISH": 2,
+                  "CLEAR": 0
+                }
+              },
+              "UNLOAD_ACTION": {
+                "ADDRESS": 11074,
+                "VALUES": {
+                  "START": 1,
+                  "FINISH": 2,
+                  "CLEAR": 0
+                }
+              },
+              "ORDER_HANDLE": {
+                "ADDRESS": 11077,
+                "BIT": {
+                  "SAVE_CAR_HANDLE": 3,
+                  "TAKE_CAR_HANDLE": 4
+                }
+              },
+              "REPORT_FIND_CAR_NUMBER": {
+                "ADDRESS": 11079
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

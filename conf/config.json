@@ -1,0 +1,23 @@
+{
+  "RESTAPI": "http://10.10.100.56:6767",
+  "ORDER_CONF": {
+    "ts_name": "simple_running",
+    "parameters": {}
+  },
+  "DATABASE": {
+    "HOST": "10.10.100.38",
+    "PORT": 5432,
+    "USER": "postgres",
+    "PASSWORD": "123",
+    "DATABASE": "xjpxz",
+    "COMMAND_TIMEOUT": 3
+  },
+  "AGV_ID_MAPPING": {
+    "A": 1,
+    "B": 2
+  },
+  "HEARTBEAT_DI": {
+    "lift-a": 9,
+    "lift-b": 11
+  }
+}

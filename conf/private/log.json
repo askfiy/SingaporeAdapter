@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "disable_existing_loggers": false,
+  "formatters": {
+    "simple": {
+      "format": "[%(levelname)s|%(asctime)s|%(filename)s:%(lineno)d]: %(message)s"
+    },
+    "standard": {
+      "format": "[%(levelname)s|%(asctime)s|%(threadName)s:%(thread)d|%(filename)s:%(lineno)d]: %(message)s"
+    }
+  },
+  "handlers": {
+    "screenHandler": {
+      "level": "DEBUG",
+      "formatter": "simple",
+      "class": "logging.StreamHandler"
+    },
+    "fileSizeHandler": {
+      "level": "DEBUG",
+      "formatter": "simple",
+      "class": "logging.handlers.RotatingFileHandler",
+      "filename": "./logs/run.log",
+      "maxBytes": 1073741824,
+      "backupCount": 50,
+      "encoding": "utf-8"
+    },
+    "datetimeHandler": {
+      "level": "DEBUG",
+      "formatter": "simple",
+      "class": "logging.handlers.TimedRotatingFileHandler",
+      "filename": "./logs/run.log",
+      "interval": 1,
+      "when": "H",
+      "backupCount": 7,
+      "encoding": "utf-8"
+    }
+  },
+  "loggers": {
+    "": {
+      "handlers": [
+        "screenHandler",
+        "datetimeHandler"
+      ],
+      "level": "DEBUG",
+      "propagate": false
+    }
+  }
+}
