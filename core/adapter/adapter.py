@@ -132,7 +132,7 @@ class Adapter:
             in_dispatch_active = row["dispatch_task_active"]
             has_fault_happened = row["fault_happened"]
 
-            has_active_order = dbapi.agv_has_active_order(agv_id)
+            has_active_order = await dbapi.agv_has_active_order(agv_id)
 
             if not has_connection_network:
                 await self.get_base_device().reset_agv_mode(agv_id, AGV_STATE.AUTO.value)
